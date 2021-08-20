@@ -1,0 +1,28 @@
+.container {
+    height: 64px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.picture {
+    position: relative;
+    top: -64px;
+    border: 2px solid white;
+    height: 128px;
+    width: 128px;
+    background-image: url("images/picture.jpg");
+    background-size: contain;
+    border-radius: 50%;
+}
+
+.appear {
+    transform: scale(0);
+}
+
+.appearDone {
+    transform: scale(1);
+    transition: all 750ms;
+    transform-origin: center;
+}
