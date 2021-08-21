@@ -1,14 +1,24 @@
 .container {
-    height: 64px;
+    height: 128px;
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-bottom: 16px;
+    margin-bottom: 80px;
+    border-bottom: 2px solid white;
+}
+
+.animationContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 196px;
+    background-color: #282C34;
 }
 
 .picture {
     position: relative;
-    top: -64px;
+    top: 64px;
     border: 2px solid white;
     height: 128px;
     width: 128px;
@@ -18,11 +28,10 @@
 }
 
 .appear {
-    transform: scale(0);
+    transform: scaleX(1);
 }
 
 .appearDone {
-    transform: scale(1);
-    transition: all 750ms;
-    transform-origin: center;
+    transform: scaleX(0);
+    transition: all 1500ms ease-in;
 }

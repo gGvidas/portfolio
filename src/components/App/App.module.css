@@ -2,20 +2,3 @@
     background-color: #282C34;
     height: 100vh;
 }
-
-.header {
-    height: 15%;
-    border-bottom: 2px solid white;
-    margin: 0 auto;
-}
-
-.appear {
-    width: 128px;
-    opacity: 0;
-}
-
-.appearDone {
-    width: 100%;
-    transition: width 750ms, opacity 0ms;
-    opacity: 1;
-}

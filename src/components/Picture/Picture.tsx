@@ -4,11 +4,17 @@ import styles from './Picture.module.css'
 
 const Picture: FunctionComponent = () => {
 	return (
-		<section className={styles.container}>
-			<CSSTransition appear in timeout={0} classNames={{ ...styles }}>
+		<>
+			<section className={styles.container}>
 				<div className={styles.picture}></div>
+			</section>
+			<CSSTransition appear in timeout={0} classNames={{
+				appear: styles.appear,
+				appearDone: styles.appearDone
+			}}>
+				<div className={styles.animationContainer}></div>
 			</CSSTransition>
-		</section>
+		</>
 	)
 }
 
