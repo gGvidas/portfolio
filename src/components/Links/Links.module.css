@@ -12,21 +12,29 @@
     justify-content: flex-start;
     align-items: center;
     text-decoration: none;
+    color: white;
 
     background: #e1eec3;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #f05053, #e1eec3);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #f05053, #e1eec3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
     background-clip: text;
-    color: transparent;
+    transition: color 0.5s;
 }
 
 .link:hover {
-    transform: scale(1.1);
     cursor: pointer;
+    color: transparent;
+    transition: color 0.5s;
 }
 
 .link svg {
     margin-right: 16px;
+    transition: transform 0.5s;
+}
+
+.link:hover svg {
+    transform: scale(1.2);
+    transition: transform 0.5s;
 }
 
 .image {
@@ -38,7 +46,7 @@
 }
 
 .appearDone {
-    transition: all 500ms;
+    transition: transform 500ms;
     transform: scale(1);
     transform-origin: center;
 }
