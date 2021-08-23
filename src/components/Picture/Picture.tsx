@@ -4,7 +4,7 @@ import styles from './Picture.module.css'
 
 const Picture: FunctionComponent = () => {
 	return (
-		<>
+		<header className={styles.header}>
 			<section className={styles.container}>
 				<div className={styles.picture}></div>
 			</section>
@@ -14,7 +14,7 @@ const Picture: FunctionComponent = () => {
 			}}>
 				<div className={styles.animationContainer}></div>
 			</CSSTransition>
-		</>
+		</header>
 	)
 }
 

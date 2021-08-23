@@ -34,7 +34,7 @@ const Links: FunctionComponent = () => {
 		<section className={styles.container}>
 			{
 				links.map((link, index) =>
-					<CSSTransition appear in timeout={1000} classNames={{...styles}} key={index}>
+					<CSSTransition appear in timeout={0} classNames={{...styles}} key={index}>
 						<a href={link.link} className={styles.link}><link.image/>{link.name}</a>
 					</CSSTransition>
 				)

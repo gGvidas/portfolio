@@ -46,7 +46,7 @@
 }
 
 .appearDone {
-    transition: transform 500ms;
+    transition: transform 1s;
     transform: scale(1);
     transform-origin: center;
 }
