@@ -31,7 +31,7 @@ const Links: FunctionComponent = () => {
 	]
 
 	return (
-		<section className={styles.container}>
+		<nav className={styles.container}>
 			{
 				links.map((link, index) =>
 					<CSSTransition appear in timeout={0} classNames={{...styles}} key={index}>
@@ -39,7 +39,7 @@ const Links: FunctionComponent = () => {
 					</CSSTransition>
 				)
 			}
-		</section>
+		</nav>
 	)
 }
 
