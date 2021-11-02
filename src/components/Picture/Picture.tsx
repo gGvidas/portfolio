@@ -8,10 +8,15 @@ const Picture: FunctionComponent = () => {
 			<section className={styles.container}>
 				<div className={styles.picture}></div>
 			</section>
-			<CSSTransition appear in timeout={0} classNames={{
-				appear: styles.appear,
-				appearDone: styles.appearDone
-			}}>
+			<CSSTransition
+				appear
+				in
+				timeout={0}
+				classNames={{
+					appear: styles.appear,
+					appearDone: styles.appearDone,
+				}}
+			>
 				<div className={styles.animationContainer}></div>
 			</CSSTransition>
 		</header>

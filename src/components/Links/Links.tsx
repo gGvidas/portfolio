@@ -6,9 +6,9 @@ import { ReactComponent as LinkedIn } from 'images/linkedin.svg'
 import { CSSTransition } from 'react-transition-group'
 
 interface ILink {
-    name: string,
-    link: string,
-    image: FunctionComponent
+	name: string
+	link: string
+	image: FunctionComponent
 }
 
 const Links: FunctionComponent = () => {
@@ -16,29 +16,36 @@ const Links: FunctionComponent = () => {
 		{
 			name: 'Twitter',
 			link: 'https://twitter.com/xxiggw',
-			image: Twitter
+			image: Twitter,
 		},
 		{
 			name: 'Instagram',
 			link: 'https://www.instagram.com/xxiggw/',
-			image: Instagram
+			image: Instagram,
 		},
 		{
 			name: 'LinkedIn',
 			link: 'https://www.linkedin.com/in/gvidas-gaidauskas-7207a7184/',
-			image: LinkedIn
+			image: LinkedIn,
 		},
 	]
 
 	return (
 		<nav className={styles.container}>
-			{
-				links.map((link, index) =>
-					<CSSTransition appear in timeout={0} classNames={{...styles}} key={index}>
-						<a href={link.link} className={styles.link}><link.image/>{link.name}</a>
-					</CSSTransition>
-				)
-			}
+			{links.map((link, index) => (
+				<CSSTransition
+					appear
+					in
+					timeout={0}
+					classNames={{ ...styles }}
+					key={index}
+				>
+					<a href={link.link} className={styles.link}>
+						<link.image />
+						{link.name}
+					</a>
+				</CSSTransition>
+			))}
 		</nav>
 	)
 }
