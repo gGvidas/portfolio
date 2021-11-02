@@ -3,6 +3,7 @@ import { ReactComponent as Twitter } from 'images/twitter.svg'
 import { ReactComponent as Instagram } from 'images/instagram.svg'
 import { ReactComponent as LinkedIn } from 'images/linkedin.svg'
 import styled from 'styled-components'
+import { color } from 'enums/color'
 
 interface ILink {
 	name: string
@@ -17,9 +18,10 @@ const Link = styled.a`
 	justify-content: flex-start;
 	align-items: center;
 	text-decoration: none;
-	color: white;
+	color: ${color.text};
 
 	svg {
+		fill: ${color.text};
 		margin-right: 16px;
 		transition: transform 0.5s;
 	}

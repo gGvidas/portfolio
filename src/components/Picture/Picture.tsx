@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
 import picture from 'images/picture.jpg'
+import { color } from 'enums/color'
 
 const Header = styled.header`
 	position: relative;
@@ -14,14 +15,14 @@ const Wrapper = styled.section`
 	display: flex;
 	justify-content: center;
 	margin-bottom: 80px;
-	border-bottom: 2px solid white;
+	border-bottom: 2px solid ${color.border};
 `
 
 const ProfilePhoto = styled.img`
-	background-color: #282c34;
+	background-color: ${color.background};
 	position: relative;
 	top: 64px;
-	border: 2px solid white;
+	border: 2px solid ${color.border};
 	height: 128px;
 	width: 128px;
 	object-fit: cover;

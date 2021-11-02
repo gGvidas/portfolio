@@ -1,8 +1,9 @@
+import { color } from 'enums/color'
 import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.section`
-	color: white;
+	color: ${color.text};
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -24,7 +25,7 @@ const Contacts = styled.section`
 
 const Email = styled.a`
 	text-decoration: none;
-	color: white;
+	color: ${color.text};
 `
 
 const Description: FunctionComponent = () => {
@@ -33,8 +34,8 @@ const Description: FunctionComponent = () => {
 			<Name>Gvidas Gaidauskas</Name>
 			<span>Software engineer</span>
 			<Contacts>
-				<Email href="mailto:gd.gvidas@gmail.com">gd.gvidas@gmail.com</Email>
-				<span>+370 6904 5576</span>
+				<Email href="mailto:gd.gvidas@gmail.com">📧gd.gvidas@gmail.com</Email>
+				<span>📱+370 6904 5576</span>
 			</Contacts>
 		</Wrapper>
 	)

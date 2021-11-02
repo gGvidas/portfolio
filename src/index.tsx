@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom'
 import App from 'components/App/App'
 import reportWebVitals from './reportWebVitals'
 import { createGlobalStyle } from 'styled-components'
+import { color } from 'enums/color'
 
 const GlobalStyle = createGlobalStyle`
 	body {
 		margin: 0;
 		height: 100vh;
-		background-color: #282c34;
+		background-color: ${color.background};
 		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
 			'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
 			sans-serif;
