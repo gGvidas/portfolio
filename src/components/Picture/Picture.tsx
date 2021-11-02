@@ -18,6 +18,7 @@ const Wrapper = styled.section`
 `
 
 const ProfilePhoto = styled.img`
+	background-color: #282c34;
 	position: relative;
 	top: 64px;
 	border: 2px solid white;
@@ -26,6 +27,7 @@ const ProfilePhoto = styled.img`
 	object-fit: cover;
 	border-radius: 50%;
 	object-position: top;
+	user-select: none;
 `
 
 const Picture: FunctionComponent = () => {
