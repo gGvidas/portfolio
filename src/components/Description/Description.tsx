@@ -10,9 +10,8 @@ const Wrapper = styled.section`
 	justify-content: center;
 	align-items: center;
 `
-const Name = styled.span`
-	font-weight: bold;
-	font-size: 24px;
+const Name = styled.h2`
+	margin: 0;
 `
 const Contacts = styled.section`
 	margin: 16px 0;
