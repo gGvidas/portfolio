@@ -18,10 +18,10 @@ const Link = styled.a`
 	justify-content: flex-start;
 	align-items: center;
 	text-decoration: none;
-	color: ${color.text};
+	color: ${color.textSecondary};
 
 	svg {
-		fill: ${color.text};
+		fill: ${color.textSecondary};
 		margin-right: 16px;
 		transition: transform 0.5s;
 	}
