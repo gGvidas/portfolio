@@ -18,16 +18,27 @@ const Link = styled.a`
 	justify-content: flex-start;
 	align-items: center;
 	text-decoration: none;
-	color: ${color.textSecondary};
+	color: ${color.textPrimary};
+
+	span {
+		padding: 0 4px;
+	}
 
 	svg {
-		fill: ${color.textSecondary};
+		fill: ${color.textPrimary};
 		margin-right: 16px;
 		transition: transform 0.5s;
 	}
 
-	&:hover {
+	&:hover,
+	&:focus {
 		cursor: pointer;
+		outline: none;
+
+		span {
+			background-color: ${color.backgroundSecondary};
+			color: ${color.textSecondary};
+		}
 
 		svg {
 			transform: scale(1.2);
@@ -66,7 +77,7 @@ const Links: FunctionComponent = () => {
 			{links.map((link, index) => (
 				<Link href={link.link} key={index}>
 					<link.image />
-					{link.name}
+					<span>{link.name}</span>
 				</Link>
 			))}
 		</Navigation>

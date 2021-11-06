@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
 	body {
 		margin: 0;
 		height: 100vh;
-		background-color: ${color.background};
+		background-color: ${color.backgroundPrimary};
 		font-family: 'Zen Kaku Gothic Antique', sans-serif;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;

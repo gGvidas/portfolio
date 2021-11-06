@@ -1,6 +1,7 @@
 export const color = {
-	background: '#FFEDE9',
-	textPrimary: '#FFEDE9',
-	textSecondary: '#062536',
+	backgroundPrimary: '#FFEDE9',
+	backgroundSecondary: '#062536',
+	textPrimary: '#062536',
+	textSecondary: '#FFEDE9',
 	border: '#062536',
 }

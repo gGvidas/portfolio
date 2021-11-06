@@ -3,7 +3,7 @@ import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.section`
-	color: ${color.textSecondary};
+	color: ${color.textPrimary};
 	width: 100%;
 	display: grid;
 	row-gap: 16px;
@@ -11,8 +11,8 @@ const Wrapper = styled.section`
 	justify-items: center;
 `
 const Name = styled.h2`
-	background-color: ${color.border};
-	color: ${color.textPrimary};
+	background-color: ${color.backgroundSecondary};
+	color: ${color.textSecondary};
 	padding: 0 4px;
 	margin: 0;
 `
@@ -27,7 +27,15 @@ const Contacts = styled.section`
 
 const Email = styled.a`
 	text-decoration: none;
-	color: ${color.textSecondary};
+	color: ${color.textPrimary};
+	padding: 0 4px;
+
+	&:hover,
+	&:focus {
+		background-color: ${color.backgroundSecondary};
+		color: ${color.textSecondary};
+		outline: none;
+	}
 `
 
 const Description: FunctionComponent = () => {
@@ -36,7 +44,9 @@ const Description: FunctionComponent = () => {
 			<Name>Gvidas Gaidauskas</Name>
 			<span>Software engineer</span>
 			<Contacts>
-				<Email href="mailto:gd.gvidas@gmail.com">gd.gvidas@gmail.com</Email>
+				<Email href="mailto:gd.gvidas@gmail.com" type="email">
+					gd.gvidas@gmail.com
+				</Email>
 				<span>+370 6904 5576</span>
 			</Contacts>
 		</Wrapper>
