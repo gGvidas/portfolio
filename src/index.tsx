@@ -14,6 +14,14 @@ const GlobalStyle = createGlobalStyle`
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		overflow: auto;
+		color: ${color.textPrimary};
+	}
+
+	h1, h2, h3, h4, h5 {
+		background-color: ${color.backgroundSecondary};
+		color: ${color.textSecondary};
+		padding: 0 4px;
+		margin: 0;
 	}
 `
 

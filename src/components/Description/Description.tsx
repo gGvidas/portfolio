@@ -10,12 +10,6 @@ const Wrapper = styled.section`
 	margin: 16px 0;
 	justify-items: center;
 `
-const Name = styled.h2`
-	background-color: ${color.backgroundSecondary};
-	color: ${color.textSecondary};
-	padding: 0 4px;
-	margin: 0;
-`
 
 const Contacts = styled.section`
 	display: grid;
@@ -41,7 +35,7 @@ const Email = styled.a`
 const Description: FunctionComponent = () => {
 	return (
 		<Wrapper>
-			<Name>Gvidas Gaidauskas</Name>
+			<h2>Gvidas Gaidauskas</h2>
 			<span>Software engineer</span>
 			<Contacts>
 				<Email href="mailto:gd.gvidas@gmail.com" type="email">
