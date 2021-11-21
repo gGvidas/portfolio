@@ -6,8 +6,13 @@ import { createGlobalStyle } from 'styled-components'
 import { color } from 'enums/color'
 
 const GlobalStyle = createGlobalStyle`
-	body {
+	* {
 		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	body {
 		height: 100vh;
 		background-color: ${color.backgroundPrimary};
 		font-family: 'Zen Kaku Gothic Antique', sans-serif;

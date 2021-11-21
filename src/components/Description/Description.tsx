@@ -11,7 +11,7 @@ const Wrapper = styled.section`
 	justify-items: center;
 `
 
-const Contacts = styled.section`
+const Contacts = styled.address`
 	display: grid;
 	column-gap: 20px;
 	grid-template-columns: 1fr 1fr;

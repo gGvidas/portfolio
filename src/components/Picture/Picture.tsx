@@ -3,11 +3,6 @@ import styled from 'styled-components'
 import picture from 'images/picture.jpg'
 import { color } from 'enums/color'
 
-const Header = styled.header`
-	padding-top: 16px;
-	width: 100%;
-`
-
 const ProfilePhoto = styled.img`
 	background-color: ${color.backgroundPrimary};
 	border: 2px solid ${color.border};
@@ -19,13 +14,14 @@ const ProfilePhoto = styled.img`
 	user-select: none;
 	margin: 0 auto;
 	display: block;
+	margin-top: 16px;
 `
 
 const Picture: FunctionComponent = () => {
 	return (
-		<Header>
-			<ProfilePhoto src={picture} />
-		</Header>
+		<>
+			<ProfilePhoto src={picture} alt="Picture" />
+		</>
 	)
 }
 

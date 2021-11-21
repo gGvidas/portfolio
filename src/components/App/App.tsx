@@ -5,11 +5,11 @@ import Description from 'components/Description/Description'
 
 const App: FunctionComponent = () => {
 	return (
-		<>
+		<article>
 			<Picture />
 			<Description />
 			<Links />
-		</>
+		</article>
 	)
 }
 
