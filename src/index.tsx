@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
 	}
 
 	body {
-		height: 100vh;
+		max-height: 100vh;
 		background-color: ${color.backgroundPrimary};
 		font-family: 'Zen Kaku Gothic Antique', sans-serif;
 		-webkit-font-smoothing: antialiased;
