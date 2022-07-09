@@ -3,25 +3,29 @@ import styled from 'styled-components'
 import picture from 'images/picture.jpg'
 import { color } from 'enums/color'
 
-const ProfilePhoto = styled.img`
+const Wrapper = styled.div`
 	background-color: ${color.backgroundPrimary};
-	border: 2px solid ${color.border};
 	height: 128px;
 	width: 128px;
-	object-fit: cover;
-	border-radius: 50%;
-	object-position: top;
 	user-select: none;
 	margin: 0 auto;
 	display: block;
 	margin-top: 16px;
 `
+const ProfilePhoto = styled.img`
+	height: 128px;
+	width: 128px;
+	object-fit: cover;
+	object-position: top;
+	border-radius: 50%;
+	border: 2px solid ${color.border};
+`
 
 const Picture: FunctionComponent = () => {
 	return (
-		<>
+		<Wrapper>
 			<ProfilePhoto src={picture} alt="Picture" />
-		</>
+		</Wrapper>
 	)
 }
 

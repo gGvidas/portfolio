@@ -4,6 +4,7 @@ import { ReactComponent as Instagram } from 'images/instagram.svg'
 import { ReactComponent as LinkedIn } from 'images/linkedin.svg'
 import styled from 'styled-components'
 import { color } from 'enums/color'
+import { Transition } from 'react-transition-group'
 
 interface ILink {
 	name: string
@@ -55,6 +56,19 @@ const Navigation = styled.nav`
 	align-items: center;
 `
 
+const defaultFadeInStyle = {
+	opacity: 0,
+	transition: `opacity 800ms ease-in-out`,
+}
+
+const transitionFadeInStyles = {
+	entering: { opacity: 0 },
+	entered: { opacity: 1 },
+	exiting: { opacity: 1 },
+	exited: { opacity: 0 },
+	unmounted: {},
+}
+
 const Links: FunctionComponent = () => {
 	const links: ILink[] = [
 		{
@@ -75,14 +89,20 @@ const Links: FunctionComponent = () => {
 	]
 
 	return (
-		<Navigation>
-			{links.map((link, index) => (
-				<Link href={link.link} key={index}>
-					<link.image />
-					<span>{link.name}</span>
-				</Link>
-			))}
-		</Navigation>
+		<Transition appear in timeout={800}>
+			{(state) => (
+				<Navigation
+					style={{ ...defaultFadeInStyle, ...transitionFadeInStyles[state] }}
+				>
+					{links.map((link, index) => (
+						<Link href={link.link} key={index}>
+							<link.image />
+							<span>{link.name}</span>
+						</Link>
+					))}
+				</Navigation>
+			)}
+		</Transition>
 	)
 }
 
