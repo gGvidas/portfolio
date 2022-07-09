@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react'
+import { PropsWithChildren } from 'react'
 import { Transition } from 'react-transition-group'
 
 const defaultFadeInStyle = (duration: number) => ({

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 import { ReactComponent as Twitter } from 'images/twitter.svg'
 import { ReactComponent as Instagram } from 'images/instagram.svg'
 import { ReactComponent as LinkedIn } from 'images/linkedin.svg'

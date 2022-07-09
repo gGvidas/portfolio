@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import picture from 'images/picture.jpg'
 import { color } from 'enums/color'

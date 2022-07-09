@@ -1,6 +1,5 @@
 import { TransitionWrapper } from 'components/Transition/TransitionWrapper'
 import { color } from 'enums/color'
-import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.section`
