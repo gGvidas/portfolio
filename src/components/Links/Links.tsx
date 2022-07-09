@@ -4,7 +4,7 @@ import { ReactComponent as Instagram } from 'images/instagram.svg'
 import { ReactComponent as LinkedIn } from 'images/linkedin.svg'
 import styled from 'styled-components'
 import { color } from 'enums/color'
-import { Transition } from 'react-transition-group'
+import { TransitionWrapper } from 'components/Transition/TransitionWrapper'
 
 interface ILink {
 	name: string
@@ -56,20 +56,7 @@ const Navigation = styled.nav`
 	align-items: center;
 `
 
-const defaultFadeInStyle = {
-	opacity: 0,
-	transition: `opacity 800ms ease-in-out`,
-}
-
-const transitionFadeInStyles = {
-	entering: { opacity: 0 },
-	entered: { opacity: 1 },
-	exiting: { opacity: 1 },
-	exited: { opacity: 0 },
-	unmounted: {},
-}
-
-const Links: FunctionComponent = () => {
+const Links = () => {
 	const links: ILink[] = [
 		{
 			name: 'Twitter',
@@ -89,20 +76,16 @@ const Links: FunctionComponent = () => {
 	]
 
 	return (
-		<Transition appear in timeout={800}>
-			{(state) => (
-				<Navigation
-					style={{ ...defaultFadeInStyle, ...transitionFadeInStyles[state] }}
-				>
-					{links.map((link, index) => (
-						<Link href={link.link} key={index}>
-							<link.image />
-							<span>{link.name}</span>
-						</Link>
-					))}
-				</Navigation>
-			)}
-		</Transition>
+		<TransitionWrapper duration={1000}>
+			<Navigation>
+				{links.map((link, index) => (
+					<Link href={link.link} key={index}>
+						<link.image />
+						<span>{link.name}</span>
+					</Link>
+				))}
+			</Navigation>
+		</TransitionWrapper>
 	)
 }
 

@@ -1,7 +1,8 @@
-import React, { FunctionComponent } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import picture from 'images/picture.jpg'
 import { color } from 'enums/color'
+import { TransitionWrapper } from 'components/Transition/TransitionWrapper'
 
 const Wrapper = styled.div`
 	background-color: ${color.backgroundPrimary};
@@ -21,11 +22,13 @@ const ProfilePhoto = styled.img`
 	border: 2px solid ${color.border};
 `
 
-const Picture: FunctionComponent = () => {
+const Picture = () => {
 	return (
-		<Wrapper>
-			<ProfilePhoto src={picture} alt="Picture" />
-		</Wrapper>
+		<TransitionWrapper duration={600}>
+			<Wrapper>
+				<ProfilePhoto src={picture} alt="Picture" />
+			</Wrapper>
+		</TransitionWrapper>
 	)
 }
 
