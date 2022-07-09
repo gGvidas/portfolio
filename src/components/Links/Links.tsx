@@ -25,6 +25,8 @@ const Link = styled.a`
 	}
 
 	svg {
+		height: 32px;
+		width: 32px;
 		fill: ${color.textPrimary};
 		margin-right: 16px;
 		transition: transform 0.5s;
