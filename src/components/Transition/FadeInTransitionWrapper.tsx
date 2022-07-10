@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren, useEffect, useState } from 'react'
 import { Transition } from 'react-transition-group'
 
 const defaultFadeInStyle = (duration: number) => ({
@@ -14,12 +14,19 @@ const transitionFadeInStyles = {
 	unmounted: {},
 }
 
-export const TransitionWrapper = ({
+export const FadeInTransitionWrapper = ({
 	children,
 	duration,
-}: PropsWithChildren<{ duration: number }>) => {
+	delay = 0,
+}: PropsWithChildren<{ duration: number; delay?: number }>) => {
+	const [enabled, setEnabled] = useState(false)
+
+	useEffect(() => {
+		setTimeout(() => setEnabled(true), delay)
+	}, [])
+
 	return (
-		<Transition appear in timeout={duration}>
+		<Transition appear in={enabled} timeout={duration}>
 			{(state) => (
 				<div
 					style={{

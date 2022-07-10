@@ -1,5 +1,5 @@
-import Picture from 'components/Picture/Picture'
-import Links from 'components/Links/Links'
+import { Picture } from 'components/Picture/Picture'
+import { Links } from 'components/Links/Links'
 import { Description } from 'components/Description/Description'
 import styled from 'styled-components'
 

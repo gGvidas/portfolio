@@ -2,15 +2,30 @@ import { FunctionComponent, SVGProps } from 'react'
 import { ReactComponent as Twitter } from 'images/twitter.svg'
 import { ReactComponent as Instagram } from 'images/instagram.svg'
 import { ReactComponent as LinkedIn } from 'images/linkedin.svg'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { color } from 'enums/color'
-import { TransitionWrapper } from 'components/Transition/TransitionWrapper'
+import { FadeInTransitionWrapper } from 'components/Transition/FadeInTransitionWrapper'
 
 interface ILink {
 	name: string
 	link: string
 	image: FunctionComponent<SVGProps<SVGSVGElement> & { title?: string }>
 }
+
+const WiggleKeyframes = keyframes`
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(10deg);
+	}
+	75% {
+		transform: rotate(-10deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+`
 
 const Link = styled.a`
 	margin: 8px;
@@ -28,17 +43,15 @@ const Link = styled.a`
 		height: 32px;
 		width: 32px;
 		fill: ${color.textPrimary};
-		transition: transform 0.5s;
 	}
 
 	&:hover,
 	&:focus {
 		cursor: pointer;
 		outline: none;
-
-		svg {
-			transform: scale(1.2);
-		}
+		animation-name: ${WiggleKeyframes};
+		animation-duration: 0.5s;
+		animation-iteration-count: 1;
 	}
 `
 
@@ -50,37 +63,36 @@ const Navigation = styled.nav`
 	align-items: center;
 	flex-direction: row;
 `
+const links: ILink[] = [
+	{
+		name: 'Twitter',
+		link: 'https://twitter.com/xxiggw',
+		image: Twitter,
+	},
+	{
+		name: 'Instagram',
+		link: 'https://www.instagram.com/xxiggw/',
+		image: Instagram,
+	},
+	{
+		name: 'LinkedIn',
+		link: 'https://www.linkedin.com/in/gvidas-gaidauskas-7207a7184/',
+		image: LinkedIn,
+	},
+]
 
-const Links = () => {
-	const links: ILink[] = [
-		{
-			name: 'Twitter',
-			link: 'https://twitter.com/xxiggw',
-			image: Twitter,
-		},
-		{
-			name: 'Instagram',
-			link: 'https://www.instagram.com/xxiggw/',
-			image: Instagram,
-		},
-		{
-			name: 'LinkedIn',
-			link: 'https://www.linkedin.com/in/gvidas-gaidauskas-7207a7184/',
-			image: LinkedIn,
-		},
-	]
-
-	return (
-		<TransitionWrapper duration={2000}>
-			<Navigation>
-				{links.map((link, index) => (
-					<Link href={link.link} key={index}>
-						<link.image title={link.name} />
-					</Link>
-				))}
-			</Navigation>
-		</TransitionWrapper>
-	)
-}
-
-export default Links
+export const Links = () => (
+	<Navigation>
+		{links.map((link, index) => (
+			<FadeInTransitionWrapper
+				delay={2000 + 500 * index}
+				duration={1000}
+				key={index}
+			>
+				<Link href={link.link}>
+					<link.image title={link.name} />
+				</Link>
+			</FadeInTransitionWrapper>
+		))}
+	</Navigation>
+)

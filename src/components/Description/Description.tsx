@@ -1,4 +1,4 @@
-import { TransitionWrapper } from 'components/Transition/TransitionWrapper'
+import { FadeInTransitionWrapper } from 'components/Transition/FadeInTransitionWrapper'
 import { color } from 'enums/color'
 import styled from 'styled-components'
 
@@ -37,7 +37,7 @@ const Title = styled.span`
 `
 
 export const Description = () => (
-	<TransitionWrapper duration={1500}>
+	<FadeInTransitionWrapper duration={1000} delay={1000}>
 		<Wrapper>
 			<h2>Gvidas Gaidauskas</h2>
 			<Title>Software engineer</Title>
@@ -48,5 +48,5 @@ export const Description = () => (
 				<span>+370 6904 5576</span>
 			</Contacts>
 		</Wrapper>
-	</TransitionWrapper>
+	</FadeInTransitionWrapper>
 )

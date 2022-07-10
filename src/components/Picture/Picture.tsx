@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import picture from 'images/picture.jpg'
 import { color } from 'enums/color'
-import { TransitionWrapper } from 'components/Transition/TransitionWrapper'
+import { FadeInTransitionWrapper } from 'components/Transition/FadeInTransitionWrapper'
 
 const Wrapper = styled.div`
 	background-color: ${color.backgroundPrimary};
@@ -20,14 +20,10 @@ const ProfilePhoto = styled.img`
 	border: 2px solid ${color.border};
 `
 
-const Picture = () => {
-	return (
-		<TransitionWrapper duration={1000}>
-			<Wrapper>
-				<ProfilePhoto src={picture} alt="Picture" />
-			</Wrapper>
-		</TransitionWrapper>
-	)
-}
-
-export default Picture
+export const Picture = () => (
+	<FadeInTransitionWrapper duration={1000}>
+		<Wrapper>
+			<ProfilePhoto src={picture} alt="Picture" />
+		</Wrapper>
+	</FadeInTransitionWrapper>
+)
