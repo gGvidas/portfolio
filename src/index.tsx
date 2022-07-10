@@ -12,8 +12,8 @@ const GlobalStyle = createGlobalStyle`
 		box-sizing: border-box;
 	}
 
-	body {
-		max-height: 100vh;
+	body, #root {
+		height: 100vh;
 		background-color: ${color.backgroundPrimary};
 		font-family: 'Zen Kaku Gothic Antique', sans-serif;
 		-webkit-font-smoothing: antialiased;

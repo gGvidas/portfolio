@@ -10,7 +10,6 @@ const Wrapper = styled.div`
 	user-select: none;
 	margin: 0 auto;
 	display: block;
-	margin-top: 16px;
 `
 const ProfilePhoto = styled.img`
 	height: 100%;
