@@ -22,7 +22,7 @@ const ProfilePhoto = styled.img`
 
 const Picture = () => {
 	return (
-		<TransitionWrapper duration={600}>
+		<TransitionWrapper duration={1000}>
 			<Wrapper>
 				<ProfilePhoto src={picture} alt="Picture" />
 			</Wrapper>

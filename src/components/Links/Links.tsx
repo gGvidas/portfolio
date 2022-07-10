@@ -71,7 +71,7 @@ const Links = () => {
 	]
 
 	return (
-		<TransitionWrapper duration={1000}>
+		<TransitionWrapper duration={2000}>
 			<Navigation>
 				{links.map((link, index) => (
 					<Link href={link.link} key={index}>
