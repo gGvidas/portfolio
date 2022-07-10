@@ -13,8 +13,8 @@ const Wrapper = styled.div`
 	margin-top: 16px;
 `
 const ProfilePhoto = styled.img`
-	height: 128px;
-	width: 128px;
+	height: 100%;
+	width: 100%;
 	object-fit: cover;
 	object-position: top;
 	border-radius: 50%;

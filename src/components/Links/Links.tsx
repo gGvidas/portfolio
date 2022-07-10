@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, SVGProps } from 'react'
 import { ReactComponent as Twitter } from 'images/twitter.svg'
 import { ReactComponent as Instagram } from 'images/instagram.svg'
 import { ReactComponent as LinkedIn } from 'images/linkedin.svg'
@@ -9,14 +9,13 @@ import { TransitionWrapper } from 'components/Transition/TransitionWrapper'
 interface ILink {
 	name: string
 	link: string
-	image: FunctionComponent
+	image: FunctionComponent<SVGProps<SVGSVGElement> & { title?: string }>
 }
 
 const Link = styled.a`
-	width: 150px;
 	margin: 8px;
 	display: flex;
-	justify-content: flex-start;
+	justify-content: center;
 	align-items: center;
 	text-decoration: none;
 	color: ${color.textPrimary};
@@ -29,7 +28,6 @@ const Link = styled.a`
 		height: 32px;
 		width: 32px;
 		fill: ${color.textPrimary};
-		margin-right: 16px;
 		transition: transform 0.5s;
 	}
 
@@ -37,11 +35,6 @@ const Link = styled.a`
 	&:focus {
 		cursor: pointer;
 		outline: none;
-
-		span {
-			background-color: ${color.backgroundSecondary};
-			color: ${color.textSecondary};
-		}
 
 		svg {
 			transform: scale(1.2);
@@ -53,7 +46,9 @@ const Navigation = styled.nav`
 	width: 100%;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	align-items: center;
+	flex-direction: row;
 `
 
 const Links = () => {
@@ -80,8 +75,7 @@ const Links = () => {
 			<Navigation>
 				{links.map((link, index) => (
 					<Link href={link.link} key={index}>
-						<link.image />
-						<span>{link.name}</span>
+						<link.image title={link.name} />
 					</Link>
 				))}
 			</Navigation>
